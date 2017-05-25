@@ -3,6 +3,8 @@ package com.codecool.airlinemanagement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Date;
+
 public class Pilot extends Employee {
     private static final Logger logger = LoggerFactory.getLogger(Pilot.class);
     /**
@@ -21,6 +23,11 @@ public class Pilot extends Employee {
     public Pilot(String name){
         super(name);
         logger.info("Pilot {} got registered in system", this.name);
+    }
+
+    public Pilot(String name, String phoneNumber, Date birthDate, Integer salary) {
+        super(name, phoneNumber, birthDate, salary);
+        logger.info("Phone number: {}; BirthDate: {}; Salary: {}", this.phoneNumber, this.birthDate, this.salary);
     }
 
     /**

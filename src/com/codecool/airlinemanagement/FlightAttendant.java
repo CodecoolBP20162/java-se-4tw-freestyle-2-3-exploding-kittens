@@ -4,15 +4,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
 public class FlightAttendant extends Employee {
     private static final Logger logger = LoggerFactory.getLogger(FlightAttendant.class);
-
-    public Set<Language> getLanguages() {
-        return languages;
-    }
 
     /**
      * <P>FlightAttendant -- extends Employee</P>
@@ -20,7 +17,7 @@ public class FlightAttendant extends Employee {
      * <P>Other attributes:</P>
      * Set languages -- list of languages //enum// the given FlightAttendant speaks
      */
-    private Set<Language> languages;
+    private Set<Language> languages = new HashSet<>();
 
     /**
      *<p> FlightAttendant Constructor</p>
@@ -30,6 +27,12 @@ public class FlightAttendant extends Employee {
     public FlightAttendant(String name){
         super(name);
         addLanguages();
+    }
+
+    public FlightAttendant(String name, String phoneNumber, Date birthDate, Integer salary) {
+        super(name, phoneNumber, birthDate, salary);
+        addLanguages();
+        logger.info("Phone number: {}; BirthDate: {}; Salary: {}", this.phoneNumber, this.birthDate, this.salary);
     }
 
     /**
@@ -62,4 +65,7 @@ public class FlightAttendant extends Employee {
         return languages.contains(lang);
     }
 
+    public Set<Language> getLanguages() {
+        return languages;
+    }
 }
