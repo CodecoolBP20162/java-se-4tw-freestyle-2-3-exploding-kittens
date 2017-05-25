@@ -7,5 +7,16 @@ public abstract class Employee {
     String name;
     String phoneNumber;
     Date birthDate;
-    Integer Salary;
+    Integer salary;
+
+    public Employee(String name) {
+        this.name = name;
+    }
+
+    public Employee(String name, String phoneNumber, Date birthDate, Integer salary) {
+        this(name);
+        this.phoneNumber = phoneNumber;
+        this.birthDate = birthDate;
+        this.salary = salary;
+    }
 }

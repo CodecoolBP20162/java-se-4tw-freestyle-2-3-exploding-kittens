@@ -1,10 +1,13 @@
 package com.codecool.airlinemanagement;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
 class FlightTest {
-    @org.junit.jupiter.api.Test
+
+    @Test
     void isReadyToTakeOff_false() {
         Pilot captain = new Pilot("Captain Morgan");
         Pilot coPilot = new Pilot("Co-pilot Stan");
@@ -13,7 +16,7 @@ class FlightTest {
         assertFalse(newFlight.isReadyToTakeOff());
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void isReadyToTakeOff_true() {
         Pilot captain = new Pilot("Captain Morgan");
         Pilot coPilot = new Pilot("Co-pilot Stan");
