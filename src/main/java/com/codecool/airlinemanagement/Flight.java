@@ -18,11 +18,21 @@ public class Flight {
      */
     private static int counter = 100000;
     private int id;
+
     private Language language = Language.ENGLISH;
+
     private int passengers;
     private Pilot captain;
     private Pilot coPilot;
-    private ArrayList<FlightAttendant> flightAttendants = new ArrayList<>();
+    private ArrayList<FlightAttendant> flightAttendants = new ArrayList();
+
+    public Language getLanguage() {
+        return language;
+    }
+
+    public ArrayList<FlightAttendant> getFlightAttendants() {
+        return flightAttendants;
+    }
 
     private static final Logger logger = LoggerFactory.getLogger(Flight.class);
 
@@ -42,8 +52,8 @@ public class Flight {
         this.captain = captain;
         this.coPilot = coPilot;
         generateId();
-        logger.info("{} flight was created. Number of Passengers: {} Captain: {}; Copilot {}; ",
-                this.id, this.passengers, this.captain.name, this.coPilot.name);
+        logger.info("{} flight was created. Number of Passengers: {}.",
+                this.id, Integer.toString(this.passengers));
     }
 
     /**
@@ -73,8 +83,9 @@ public class Flight {
      * @return a boolean
      */
     public boolean isReadyToTakeOff(){
-        logger.info("Captain {} has compass: {}; CoPilot {} has compass {} ",
-                this.captain.name, this.captain.hasCompass(), this.coPilot.name, this.coPilot.hasCompass());
+        logger.info("Captain {} has compass: {};",
+                this.captain.name, this.captain.hasCompass());
+        logger.info("CoPilot {} has compass {}", this.coPilot.name, this.coPilot.hasCompass());
         logger.info("Number of passengers {}", this.passengers);
         if (captain.hasCompass() && coPilot.hasCompass() && passengers < 221) {
             for (FlightAttendant flightAttendant : flightAttendants) {

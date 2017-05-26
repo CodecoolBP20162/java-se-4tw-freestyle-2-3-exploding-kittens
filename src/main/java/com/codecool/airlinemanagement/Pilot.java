@@ -27,7 +27,7 @@ public class Pilot extends Employee {
 
     public Pilot(String name, String phoneNumber, Date birthDate, Integer salary) {
         super(name, phoneNumber, birthDate, salary);
-        logger.info("Phone number: {}; BirthDate: {}; Salary: {}", this.phoneNumber, this.birthDate, this.salary);
+        logger.info("Phone number: {}; BirthDate: {};", this.phoneNumber, this.birthDate);
     }
 
     /**

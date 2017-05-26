@@ -17,7 +17,7 @@ public class FlightAttendant extends Employee {
      * <P>Other attributes:</P>
      * Set languages -- list of languages //enum// the given FlightAttendant speaks
      */
-    private Set<Language> languages = new HashSet<>();
+    private Set<Language> languages = new HashSet();
 
     /**
      *<p> FlightAttendant Constructor</p>
@@ -32,7 +32,7 @@ public class FlightAttendant extends Employee {
     public FlightAttendant(String name, String phoneNumber, Date birthDate, Integer salary) {
         super(name, phoneNumber, birthDate, salary);
         addLanguages();
-        logger.info("Phone number: {}; BirthDate: {}; Salary: {}", this.phoneNumber, this.birthDate, this.salary);
+        logger.info("Phone number: {}; BirthDate: {};", this.phoneNumber, this.birthDate);
     }
 
     /**

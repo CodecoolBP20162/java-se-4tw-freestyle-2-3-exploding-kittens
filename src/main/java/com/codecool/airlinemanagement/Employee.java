@@ -32,6 +32,6 @@ public abstract class Employee {
         this.phoneNumber = phoneNumber;
         this.birthDate = birthDate;
         this.salary = salary;
-        logger.info("Phone number: {}; BirthDate: {}; Salary: {}", this.phoneNumber, this.birthDate, this.salary);
+        logger.info("Phone number: {}; BirthDate: {};", this.phoneNumber, this.birthDate);
     }
 }

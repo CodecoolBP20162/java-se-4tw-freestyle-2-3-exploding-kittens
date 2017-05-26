@@ -1,6 +1,6 @@
 package com.codecool.airlinemanagement;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.Date;
 
@@ -9,11 +9,12 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Created by davidkulchar on 2017.05.25..
  */
-class FlightAttendantTest {
+public class FlightAttendantTest {
 
     @Test
     public void flightAttendantConstructorTest() {
         assertNotNull(new FlightAttendant("Jane Doe"));
+        
     }
 
     @Test
